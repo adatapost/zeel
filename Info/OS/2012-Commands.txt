@@ -1,0 +1,171 @@
+6. copy con <filename> -- To create a file using CLI. This way we can understand the one of many
+			  ways to create a file and also its metadata.
+
+>copy con hello
+Type something....here
+and then press Ctrl+Z or F6
+
+ File name can be any valid name and it might contains special characters as well as spaces.
+
+c:\zeel>copy con address.me
+101-PQR Society
+Mehsana
+^Z and then press enter
+
+c:\zeel>dir  -- file, size, date/time of creation will be shown
+
+Another way to create/open a text file using 'notepad'
+c:\zeel>notepad sample.txt
+
+Open an existing file,
+c:\zeel>notepad address.me
+
+7. copy sourceFile destiFile -- copy a file. To create a duplicate of "sourceFile" and the new file name will be "destiFile".
+
+c:\zeel>dir
+  address.me
+c:\zeel>copy address.me address.your
+c:\zeel>dir
+  address.me
+  address.your    <--- These two files have identical metadata and content except their names are
+			different.
+
+8. type  <filename> -- To view the content of file
+c:\zeel>type address.me  <--- Will display the content of file
+
+9. ren  <existingFileName>  <newFileName> -- To rename the file
+c:\zeel>ren address.me address.kvp
+    So, address.me filename is changed. See the content of directory using "dir" command
+
+10. del or erase - erase/delete a file
+    del <filename>
+
+c:\zeel>del address.me   -- will be deleted permanately if it is there. You can't recover because
+			   it won't placed into "Recycle bin".
+
+11. dir command with switches - switches or option allow the command to produce somewhat different
+				result as per documentation of switch/option.
+
+>dir /p    <-- Pause wise listing
+>dir /w    <-- Wide format listing
+>dir /w /p <-- Wide and pause wise
+>dir /b    <-- bare format (filename/foldername)
+>dir /on   -- Order (sort) by filename/foldername) in ascending order
+>dir /o-n  -- Order by filename in descending order
+>dir /os   -- by size
+>dir /od    -- by date time
+ For descending order add - hyphen between on, os, od. e.g /o-s
+
+12. Wildcard characters -- to create a group of files/folder based upon the filename filter.
+    We've two wildcard characters (Wildcard means pattern)
+    1. *  -- It represents whole name after the location 
+    2. ? -- It represents single character
+
+   Wildcard chars can be used with dir, copy, ren and del commands.
+
+>dir ?   -- single char file names
+>dir ??  -- Two or less char file names
+>dir help*.* -- Any files whose name begins with "help"
+>dir ?e??    -- Second char is e
+>dir ??t*.txt -- Third char must be 't' and has txt extension
+>dir *.txt    
+
+Bulk copy
+---------
+>copy *.txt *.001
+>copy help*.* help-2019*.*    
+
+Bulk rename
+------------
+>ren *.cat *.mat
+
+Bulk delete
+------------
+>del a*.*  -- Remove all files whose name begins with "a"
+>del *.txt
+>del *.*   --- Delete all file
+
+Copy/ren files across the folders
+=================================
+Assume that we've c:\zeel\language\java folder and we want to copy all file from c:\zeel to "java" folder.
+
+c:\zeel>copy *.* language\java
+
+Or
+
+c:\>copy c:\zeel\*.*  c:\zeel\language\java
+
+c:\>tree zeel /f
+
+Rename all .txt files to .abcd of "java" folder:
+c:\zeel>ren langauge\java\*.txt *.abcd
+
+Delete some files,
+>del language\java\*.abcd
+
+
+Merge the files and copy the content of merged files into another file.
+>copy con z1
+abc^z
+>copy con z2
+pqr^z
+>copy con z3
+eef^z
+
+>copy z1+z2+z3 z4
+>dir
+>type z4
+
+
+The > redirection of output using > operator
+--------------------------------
+To save the output of command into another file
+e.g
+
+c:\zeel>dir *.txt > txtfiles
+c:\zeel>type txtfiles
+
+c:\zeel>type address.me > newaddress.me  <-- New file "newaddress.me" save the output
+
+
+Sort command (external)
+------------------------
+To sort the content of text document in asc or desc order
+
+>copy con city
+mehsana
+ahmedabar
+surat
+rajkot
+
+
+>sort city 
+>sort /+2 city  sort on second character of each city name
+>sort /R city   Descending order
+
+more command (External)
+=======================
+
+To read the content from another command or from the file and display "page" wise.
+e.g
+>dir | more
+>more city.txt 
+>more city.txt /+10   -- begins with 10th line
+
+Note: To end the "more" command press "Q"
+
+
+ 
+
+
+
+
+
+
+
+   
+
+
+
+  
+

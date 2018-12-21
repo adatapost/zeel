@@ -1,0 +1,306 @@
+﻿The Operating Systems
+============================ 
+
+The "OS" (Operating System) is a "system software" which is used to initialize & activate computer hardware and allow users to interact with its system either using GUI (Graphical User Interface) or CLI (Command Line Interface).
+
+Normally an OS does following major tasks:
+
+    1. Boot the machine ( Initialize & Activate hardware i.e. Initialize RAM chip,                           Microprocessors, DISKs etc.)
+    2. Process management -- It is responsible to run/execute the applications (programs),
+				pause, stop or terminate the applications.
+    			     It is responsible to perform concurrent execution of applications.
+			     It is also responsible to perform "parallel execution" of apps.
+				e.g Printing and playing music/video are example of paralle 				   processing.	  
+    3. Memory management -- It is responsible to allocate (give) and deallocate (revoke) primary
+				memory or RAM to the running applications.
+			  -- There are two types of storage devices :
+				1. RAM - Random Access Memory - which is volatile type of memory
+					 which is avaialble to running applications by the
+					 operating system's memory manager software.
+
+					- Data saved in RAM are short lived and will be discarded
+					  as soon as the concern program/process is finished (
+					  may be 1 milliseconds,  1 microseconds or more...)
+				 2. Secondary storage - Harddisk, Pen, DVD etc are example of
+					  secondary storage and these devices are used to
+					  store "data" permanently.
+    4. Application Programming Interface (API) and user interface
+
+				It provide three ways so the user can interact with the system
+				itself and these three ways are:
+					1. GUI
+					2. CLI and
+					3. Programming interface Or API ( Library of 						commands/functions. Just like book library, an OS
+						has 'function' libraries)
+
+What is Software?
+-------------------
+Set of related programs is called "Software".  
+
+There are three category of software:
+   1. System Software (e.g Operating systems and other system level utilities--format, diskpart)
+   2. Application Software (Word, Excel, Accounting, Paint, Calc, Notepad etc)
+   3. Programming languages OR  Software Development Kit (SDK) ( C, C++, Java, .NET, PHP, Python
+											etc)
+
+The Windows Operating System
+=============================
+It is commercial operating system from "Microsoft" and current version/edition of Win OS is Windows 10.
+
+There are two architectures under the operating system is installed and these two are:
+  1. x86 or 32 bits  
+  2. 64 bits
+32 bits and 64 bits are addressing capabilities of the operating system and "Microprocessors Chips".  
+                                    32
+That means, 32 bits OS can address 2    memory addresses (An address is just like a page number in
+a diary).                   64 
+The 64 bits OS cam address 2 memory addresses. 
+
+That means 32 bits OS can access 4 GB RAM whereas 64 bits OS can access more than 8 GB RAM.
+
+
+Mesurement units of memory are:
+    1 byte = 8 bits    
+                7    6    5    4   3     2    1   0    <--- Bits  ( (Bi)nary Digi(ts))
+              |----|----|----|----|----|----|----|----|
+              |    |    |    |    |    |    |    |    |
+              |----|----|----|----|----|----|----|----|
+
+    2 bytes = 16 bits = 1 nibble
+    4 bytes = 32 bits = 1 word
+    1024 bytes = 1 Kilo Bytes (KB)  (or 1024 * 8 Bits)
+    1024 KB    = 1 Mega Bytes (MB)
+    1024 MB    = 1 Giga Bytes (GB)
+    1024 GB    = 1 Tera Bytes (TB)
+
+Binary Digits and computer hardware
+-----------------------------------
+Each and every device (thing) associated to the computer system functions as per the instructions described in a "binary number system". In other words, the "binary number" system is the language of computer devices. These devices communicate with each other using "binary number" system. So, in computer, everything is "number(s)".
+
+We, the human, uses "decimal number" system in our daily communications. 
+Decimal means a number system whose base is 10.
+Binary  means a number system whose base is 2
+Octal   means a snumber system wose base is 8
+Haxa decimal means a number system whose base is 16 and there are number of other but less popular number  systems.
+
+In computing, we will have to familar with "decial, binary, octal and hexa decimal" number systes.
+
+Each number system merge the digits and separate the digits from the given "numeric data or numerals".
+
+For instance, split or separate the digits in decimal number system:
+
+  153 whole number is divided by 10 resulting returns division and remainder and again 
+  divide the division using 10 till division is not become zero.
+
+Computer hardware uses electoric charges ( positive or negative ) to represent the 'data & instructions' via electornics registers ( just like a page of notebook). A 'register or electornic register' has Eight vaccant boxes where each box can hold electric charge.
+
+This Eight boxed register is also known as "Byte or 1 Byte" and each box in register is known as "Bits" because each represent the electric charge state - +ve or -ve / On/Off or Zero (positive) and Non-Zero (1 for negative) charge.
+
+Binary number pattern records positive or negative charges and it is look like a following pattern: 
+   10100  
+   100001 etc
+
+How computer or human translate decimal number system to binary number system? (Decimal to Binary)
+
+e.g  To find binary equivalent to 25 decimal, we have to divide a number by 2 and repeat the same
+	step till division is not zero.
+
+  | 25     Remainder/Modulo
+2 | 12     1
+2 | 6      0
+2 | 3      0
+2 | 1      1   ^
+2 | 0      1   |  Write the binary digits in reverse (bottom to top)
+
+So, 11001 is binary of "25"
+
+Now, convert binary to deciaml, divide by 10 till division is not zero and with each binary digits ( 0 or 1 ), from right to left multiple each digit with power of 2
+
+  7    6    5    4    3    2    1    0
+ 2    2    2    2    2    2    2    2 
+128   64   32   16   8    4    2    1
+                1    1    0    0   1 
+                16   8    0    0   1  = 25
+
+
+
+Find binary of 37 ?  1 0 0 1 0 1   =  37
+                     1             =  1
+                     000000000001  =  1
+                     11            =  3
+                     101           =  5
+                     1010          = 10
+                     10100         = 20
+                     101000        = 40
+
+Octal number system, remainder will be returned any number between 0 to 7 
+Decimal		Octal equialent
+---------------------------------
+0			0
+1			1
+2			2
+3			3
+4			4
+5			5
+6			6
+7			7
+8			10
+..
+..
+
+
+8 | 8    Remainder
+8 | 1    0
+  | 0    1    ^
+              |  
+             10
+
+8 | 10
+8 | 1     2
+8 | 0     1 
+    
+Hexa decimal has 16 as base so its remainder will be any digit between 0 to 15
+-----------------------------------------------------------
+Decimal		Hexa decimal
+0		0
+1		1
+2		2
+..
+..
+9		9
+10		A or a
+11		B or b
+12		C or c
+13		D or d
+14		E or e
+15		F or f
+
+1010  => 10 -> A  --> 12
+Bin      Dec   Hex    Oct
+
+F  = 15 =  1 1 1 1  
+         1           0
+FF  =   16         16
+         F(15)     F (15)
+         16 * 15 + 1 * 15
+
+Decimal to Hexa
+
+16 | 255    Remainder
+16 | 15     15  F
+   | 0      15  F
+
+
+16 | 1234 
+16 |  77         2     2 
+16 | 4           13    D
+   | 0           4     4
+             
+ 16^2 16^1  16^0
+  4    D     2
+ 256*4 + 16 * 13 + 2
+
+Character set and keys
+=======================
+Keyboard has number of keys and each can emulate one or two characters. For example, key "A" can produce lower alphabet and upper alphabet.
+
+There are total 256 characters in English or ANSI Characterset. ANSI stands for American National Standard Institute. ANSI standaradized the things in computing. So, there are 256 different different ANSI characters which are also known as "ASCII" characters. ASCII stands for American Standard Code for Information Interchange.
+
+Each character has a unique number (binary or deciaml) as an identity. That means each character is uniquely identified by the number/numeric value is called "ASCII Code".
+
+ ASCII 		ASCII
+ Character	Code 
+--------------------------
+(nul)		0
+ (\0  nul)
+ ☺		1
+ ☻		2
+ ..
+ ..
+ 
+ backspace	8
+ Tab		9
+ ...
+ (enter or
+ carriage return
+ or \r)		13
+ ...
+ spacebar	32
+ ...
+ 0		48
+ 1		49
+ 2		50
+ ...
+ 9		57
+ ...
+ A		65
+ B		66
+ C		67
+ ...
+ ...
+ a		97
+ b		98
+ c		99
+ ....
+ ....
+ blank		255   
+======================
+Total 0 to 255 = 256 characters
+Note: To print the ASCII Char of equivalent ASCII Code, Hold down "Alt" + type any number between 0 to 255 from the numeric keypad.
+
+Name of some important characters/keys
+---------------------------
+` 	Backtick
+~	Tilt
+^	Caps or Caret
+&	Amphersand
+*	Astrisk or Star
+(	Opening parenthesis
+)	Closing parenthesis
+-	Hyphen or Minus
+_	Underscore
+|	Pipe
+\	Backslash
+/	Forward Slash
+{	Curly brace opening
+}	Closing Curly brace
+[	Opening square bracket
+]	Closing square bracket
+<	Opening angle bracket (less than sign)
+>	Closing angle bracket ( greater than sign)
+'	Single quote
+" 	Double quote
+;	Semi-colon
+:	Colon
+
+
+
+
+
+
+
+
+ 
+
+
+                                   
+
+
+
+ 
+
+
+    
+
+
+ 
+     
+
+ 
+
+
+
+
+
+
+   

@@ -1,0 +1,192 @@
+Operating System commands
+=========================
+There are three types of OS commands:
+  1. Internal commands -- Commands which are part of the operating system and they will be 			  available forever with any version of window OS.
+  2. Extenral commands -- Commands/tools which are external to the OS. They may be removed or
+			  might be installed. External commands are found at c:\windows and
+			 c:\windows\system32 folders and have .com or .exe extensions.
+  3. Batch commands -- These commands can be internal as well as external but they are used
+			to write small program instead of issuing a single command. i.e. this
+			small program or small code or small script contains more than one
+			commands (internal and external) and they will be run/executed in
+			given order.  Batch program files have .bat or .cmd or .sh extension.
+These commands are issued from the command prompt window OR Terminal or Command window Or WinKey+R (Run dialogbox). In Win OS, we can have another powerful command line interface called "Powershell" which is used by skilled developers and system manager to manage system-level tasks.
+
+File system 
+============
+It is a system software which initialize the disks - harddisk, cdrom, dvd, pen, tape etc secondary storage devices and mount (keep alive) for us - users of the system so we can save data onto their medium.
+
+Each disk has one or more partition and each partition has one or more volume(s). Each volume is than identified by a letter C, D, E, F etc and this letter is called 'drive-name'. In unix/linux, their file system don't support 'drive-letter' to identify the volume but it uses volume-name instead of 'drive-letter/name'.
+
+And each volume has its own 'file system' which defines the ways to represent the data. Window uses FAT (File Allocation Table), FAT32 ( Improved over FAT), NTFS (Network File System - Currently used and high-performance), HPFS etc file systems. Linux uses EXT file system and similarly MAC OS has its own file system.
+
+Now, each file system is then accessed via set of commands or instructions of operating system -- people uses GUI or CLI or Programming approach.
+
+Installation of "File System" into a volume is called "Formatting a device/disk". Installation of "File System" create a "root directory or main directory" which is expressed via "/" (forward lash) in non-win os as well as win OS and "\" backword slash for Win OS.
+
+Here are example of "prompt" -- a prompt is a location which receive the keyboard input or commands.
+
+C:\>_
+C:\Windows\System>_ <----- Prompt cursor   
+^ ^       ^       
+| |        |----------------------- Direcotry separator
+| |------- Root direcotry
+|
+Drive 
+  
+
+Note: Don't work directly at "root" directory of any volume. Instead create your own folder and then try to work inside the scope of your folder or directory.
+
+Folder or directory --- Folder or directory is used to organize the files and folders. In short directory saves the files and other directories.
+
+Files -- File saves the data. In fact "file name" is an address of location inside the "disk-partition-volume" where your data are persisted. We can create / update files using number of ways i.e. generally using File + Save or SaveAs menu of GUI apps, or CLI commands (type, copy etc) or programatically.
+
+Commands (Internals)
+--------------------
+First of all open the command window (WinKey+R + Cmd) - Cmd is an extenral command, and you will have following content in your command window:
+
+c:\Users\user-namexxxxxx>_
+
+You can open command window by typing "cmd" at "path bar" of  "File Explorer or My Computer window".
+
+You can run file explorer by issuing "start ." or "start c:\path" command from the command window.
+
+1. cd folder-dirname -- To change the current directory or to make given "folder-dirname" as 
+			 current directory.
+2. md folder-dirname -- To create the new direcotry into current directory
+3. dir               -- To list the files/folders
+3. rd folder-dirname -- To remove an empty folder
+
+
+1. Practice
+
+c:\Users\xxxxxx>cd\  + PRess Enter  to change at "root"
+c:\>
+
+c:\>md zeel
+c:\>dir
+c:\>md zeel
+c:\>cd zeel
+c:\zeel>dir
+
+<dir>   .      <--- Current directory
+<dir>   . .    <--- Parent directory
+
+Create two more directories into c:\zeel>
+
+c:\zeel>md office
+c:\zeel>dir
+c:\zeel>md practice
+c:\zeel>dir   <--- Use dir command to list the files/folders
+
+Further create two directories into "office"
+c:\zeel>cd office
+c:\zeel\office>md data
+c:\zeel\office>md work
+c:\zeel\office>dir
+
+Make "work" as current directory:
+C:\zeel\office>cd work
+c:\zeel\office\work>
+
+Now, make 'office' at current directory (or come out from work directory):
+c:\zeel\office\work>cd..   .. stands for 'parent-directory' 
+c:\zeel\office>cd ..
+c:\zeel>cd..
+c:\>tree zeel   <---- Will display all directories like a tree. Tree is an external command.
+
+Now, remove the zeel direcotry and its sub-direcotires:
+
+c:\>rd zeel <-- Can't remove
+c:\>cd zeel
+c:\zeel>cd office
+c:\zeel\office>dir
+c:\zeel\office>rd work
+c:\zeel\office>rd data
+c:\zeel\office>cd..
+c:\zeel>rd office
+c:\zeel>rd practice
+c:\zeel>cd..
+c:\>rd zeel
+c:\>dir
+
+Example: Write commands to create following directory structure
+
+zeel-------|
+           |--------language\
+           |                 |
+           |                 |---- C
+           |                 |---- Java
+           |-----database\
+           |             |---- oracle-----|--- oracle11
+           |             |                |---- mysql
+           |             |---- nosql
+
+c:\>md zeel
+cd zeel
+
+
+Construct the path to make current directory. A "path" is a way to express the location of folder or file and it has following syntax:
+ Drive:\Folder\Sub\Sub
+
+c:\>cd c:\zeel\language\c  <-- This will set "c" at current directory
+c:\zeel\language\c>cd c:\zeel\database\oracle\mysql
+c:\zeel\database\oracle\mysql>
+
+You may remove the directories:
+c:\>rd c:\zeel\language\c
+c:\>rd c:\zeel\language\java
+
+
+Root relative path
+------------------
+Where there is a common root then you can avoid the reference of drive letter or even root or parent directory name.
+
+c:\>md zeel  or  c:\>md c:\zeel
+c:\>md zeel\database Or c:\>md c:\zeel\database
+c:\>cd zeel
+c:\zeel>md language
+c:\zeel>md language\c  OR md c:\zeel\language\c
+c:\zeel>md language\java
+
+To set 'mysql' at current dir:
+c:\zeel\language\c>cd c:\zeel\database\oracle\mysql
+Or
+c:\zeel\language\c>cd ..\..\database\oracle\mysql
+
+
+
+4. copy -- Copy the file(s)
+
+syntax:  copy source-path destination-path
+
+1. Open notepad and create "sample.txt" into c:\zeel\language\c folder
+2. Open paint brush and create "hello.png" into "mysql" folder/
+
+3. c:\>tree zeel /f  <-- Display all directories along with files
+
+4. copy "sample.txt" to oracle folder
+
+c:\>copy c:\zeel\language\c\sample.txt c:\zeel\database\oracle11\mysql
+OR
+c:\>copy c:\zeel\language\c\sample.txt c:\zeel\database\oracle11\mysql\sample.txt
+Or
+
+c:\zeel>copy language\c\sample.txt  database\oracle11\mysql
+ 
+
+
+
+
+
+
+    
+ 
+
+
+
+
+
+
+
+

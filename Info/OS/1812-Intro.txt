@@ -1,0 +1,10 @@
+﻿Each character we type throgh keyboard will be converted into equivalent binary pattern using keyboard and operating system software.
+
+If we wish to represent non-English charset, there is another popular charset is there which is known as "Unicode or Universal Text Format (UTF)" which automatically uses "2 bytes" to represent any character of human languages including Hindi, Gujarati, French etc.
+
+Unicode is also known as "Wide Character".
+Unicode is also known as "National Character".
+Unicode is also expressed as "UTF-8" or UTF-16 or UTF-32
+
+Note: Open "charmap" tool (Win Key + R ), to examine the UTF or Unicode of each character.
+
